@@ -1,13 +1,13 @@
 -- PHASE 1 PREPPING DATA
 
--- checking for duplicates
+-- Checking for duplicates
 SELECT call_id, call_datetime, call_date, first_name, last_name, phone_number, customer_id, employee_id, call_category, call_length_minutes,
 COUNT(*) AS row_count
 FROM support_calls_2025
 GROUP BY call_id, call_datetime, call_date, first_name, last_name, phone_number, customer_id, employee_id, call_category, call_length_minutes
 HAVING COUNT(*) > 1;
 
--- clean data
+-- Clean data
 SELECT call_id,
 	call_datetime,
 	call_date,
@@ -22,7 +22,7 @@ SELECT call_id,
 	call_length_minutes
 FROM support_calls_2025;
 
--- final query (clean and deduplicated)
+-- Final query (clean and deduplicated)
 SELECT DISTINCT 
 	call_id,
 	call_datetime,
@@ -39,7 +39,7 @@ SELECT DISTINCT
 FROM support_calls_2025;
 
 
--- PHASE 2 CREATING BASELINE / JOIN TABLES
+-- PHASE 2 BASELINE ANALYSIS FOR OCTOBER
 SELECT call_date,
     COUNT(call_id) AS total_calls,
     AVG(call_length_minutes) AS avg_call_length,
@@ -49,15 +49,14 @@ WHERE call_date >= '2025-10-01' AND call_date < '2025-11-01'
 GROUP BY call_date, call_category
 ORDER BY call_date DESC;
 
--- joining table to events dataset
+-- Joining support_calls_2025 table to product_events_2025 table using a CTE
 WITH october_calls AS (
 SELECT call_date,
     COUNT(call_id) AS total_calls,
-    AVG(call_length_minutes) AS avg_call_length,
-    call_category
+    AVG(call_length_minutes) AS avg_call_length
 FROM support_calls_2025
 WHERE call_date >= '2025-10-01' AND call_date < '2025-11-01'
-GROUP BY call_date, call_category
+GROUP BY call_date
 )
 
 SELECT *
@@ -67,9 +66,9 @@ ON o.call_date = p.event_date
 ORDER BY call_date DESC;
 
 
--- PHASE 3 ANALYSIS
+-- PHASE 3 EVENT ANALYSIS
 
--- Billing event
+-- Billing Workflow Update
 SELECT CASE WHEN call_date < '2025-10-15' THEN 'pre_event'
 	ELSE 'post_event'
 	END AS period,
@@ -83,7 +82,7 @@ WHERE call_date >= '2025-10-01'
 AND call_date < '2025-11-01'
 GROUP BY period;
 
--- Login MFA event
+-- Login MFA Rollout
 SELECT CASE WHEN call_date < '2025-10-25' THEN 'pre_event'
 	ELSE 'post_event'
 	END AS period,
