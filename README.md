@@ -12,6 +12,6 @@ While daily call volume remained relatively stable after both events, the types 
 	•	Provide clear customer-facing resources such as FAQs or walkthroughs
 	•	Monitor support metrics closely after launches to catch customer friction early and reduce customer churn
 
-## Tools & Skills
+# Tools & Skills
 Tools: SQL (MySQL)
 Skills: Data cleaning, deduplication, aggregation, normalization, event analysis, business insights
