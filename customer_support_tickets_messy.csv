@@ -1,0 +1,11 @@
+Ticket_ID,Customer_Name,Clean_name,Email,Clean_email,Issue_Type,Clean_issue_type,Agent_Name,Clean_agent_name,Resolution_Time_Min,Ticket_Date
+1001,  john doe  ,John Doe, johndoe@email.com ,johndoe@email.com, Login Issue ,Login Issue,  sarah lee ,Sarah Lee,15,1/3/24
+1002,JANE SMITH,Jane Smith,janesmith@email.com,janesmith@email.com,Billing issue,Billing Issue,mike brown,Mike Brown,45,1/3/24
+1003,john doe,John Doe,johndoe@email.com ,johndoe@email.com,Login Issue,Login Issue,sarah lee,Sarah Lee,15,1/3/24
+1004,  Emily   Davis ,Emily Davis,emilyd@email.com,emilyd@email.com,Password Reset ,Password Reset,Mike Brown ,Mike Brown,10,1/4/24
+1005,robert johnson,Robert Johnson,robertj@email.com,robertj@email.com,Billing Issue ,Billing Issue,sarah lee ,Sarah Lee,30,1/4/24
+1006,JANE SMITH ,Jane Smith,janesmith@email.com ,janesmith@email.com,Billing issue,Billing Issue,mike brown ,Mike Brown,45,1/4/24
+1007,michael chen,Michael Chen,michaelc@email.com,michaelc@email.com,Login issue,Login Issue,sarah lee,Sarah Lee,20,1/5/24
+1008,Emily Davis,Emily Davis,emilyd@email.com ,emilyd@email.com,Password reset,Password Reset,mike brown,Mike Brown,10,1/5/24
+1009,   robert johnson ,Robert Johnson,robertj@email.com,robertj@email.com,billing Issue,Billing Issue,sarah lee,Sarah Lee,30,1/5/24
+1010,MICHAEL CHEN ,Michael Chen,michaelc@email.com ,michaelc@email.com,Login Issue ,Login Issue,SARAH LEE ,Sarah Lee,20,1/6/24
