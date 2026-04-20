@@ -14,4 +14,5 @@ While daily call volume remained relatively stable after both events, the types 
 
 ### Tools & Skills
 Tools: SQL (MySQL)
+
 Skills: Data cleaning, deduplication, aggregation, normalization, event analysis, business insights
